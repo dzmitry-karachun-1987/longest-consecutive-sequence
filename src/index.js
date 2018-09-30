@@ -1,12 +1,9 @@
 module.exports = function longestConsecutiveLength(array) {
-  
-  const lgth = array.length;
   const set = new Set(array);
-  var result = 0;
-
-  for (var i = 0; i < lgth; i++) {
+  let result = 0;
+  for (let i = 0, len = array.length; i < len; i++) {
     if (!set.has(array[i] - 1)) {
-      var jarr = array[i];
+      let jarr = array[i];
       while (set.has(jarr)) {
         jarr++;
         if (result < jarr - array[i]) {
